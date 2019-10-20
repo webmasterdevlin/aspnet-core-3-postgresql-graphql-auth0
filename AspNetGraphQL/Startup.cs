@@ -1,3 +1,4 @@
+using GraphiQl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,6 +55,8 @@ namespace AspNetGraphQL
 
             app.UseHttpsRedirection();
 
+            app.UseGraphiQl("/graphql");
+            
             app.UseRouting();
 
             app.UseAuthentication();
