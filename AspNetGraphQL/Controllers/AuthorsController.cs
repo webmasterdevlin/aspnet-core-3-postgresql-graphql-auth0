@@ -3,6 +3,7 @@ using System.Linq;
 using AspNetGraphQL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetGraphQL.Controllers
 {
@@ -25,9 +26,12 @@ namespace AspNetGraphQL.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute] string id)
+        public IActionResult GetById([FromRoute] Guid id)
         {
-            var author = _context.Find<Author>(id);
+            var author = _context.Authors
+                .Where(a => a.Id == id)
+                .Include(b => b.Books)
+                .FirstOrDefault();
 
             return Ok(author);
         }
