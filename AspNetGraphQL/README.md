@@ -8,7 +8,7 @@
     - Microsoft.EntityFrameworkCore.SqlServer
     - Npgsql.EntityFrameworkCore.PostgreSQL
     
- Download PostgresSQL here [postgresql.org/download](https://www.postgresql.org/download/)
+ Download PostgreSQL here [postgresql.org/download](https://www.postgresql.org/download/)
  
  Sign up for free Auth0 account here [auth0.com](https://auth0.com/)
  
