@@ -21,8 +21,9 @@ namespace AspNetGraphQL.Migrations
 
             modelBuilder.Entity("AspNetGraphQL.Entities.Author", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -34,11 +35,12 @@ namespace AspNetGraphQL.Migrations
 
             modelBuilder.Entity("AspNetGraphQL.Entities.Book", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
 
-                    b.Property<string>("AuthorId")
-                        .HasColumnType("text");
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Genre")
                         .HasColumnType("text");
@@ -77,7 +79,9 @@ namespace AspNetGraphQL.Migrations
                 {
                     b.HasOne("AspNetGraphQL.Entities.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
