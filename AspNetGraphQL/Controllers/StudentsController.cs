@@ -1,5 +1,6 @@
 using System;
 using AspNetGraphQL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetGraphQL.Controllers
@@ -31,6 +32,7 @@ namespace AspNetGraphQL.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Post([FromBody] Student student)
         {
             _context.Add(student);
