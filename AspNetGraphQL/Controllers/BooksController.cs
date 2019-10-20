@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using AspNetGraphQL.Entities;
+using AspNetGraphQL.Entities.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

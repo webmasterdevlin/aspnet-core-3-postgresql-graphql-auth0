@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using AspNetGraphQL.Entities.Context;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Authorization;

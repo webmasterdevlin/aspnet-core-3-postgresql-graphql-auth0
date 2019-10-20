@@ -53,6 +53,26 @@ namespace AspNetGraphQL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { new Guid("f9f24a09-4836-4c55-a38b-967cb9e10290"), "Leo Tolstoy" },
+                    { new Guid("321b4996-e320-4f1c-beb7-b55ce8fb7655"), "William Shakespeare" },
+                    { new Guid("9e80c3ed-9829-4aa8-a1e2-5e42c3d4d2e9"), "Mark Twain" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Students",
+                columns: new[] { "Id", "Age", "Name" },
+                values: new object[,]
+                {
+                    { new Guid("f9f24a09-4836-4c55-a38b-967cb9e10290"), 34, "Devlin Duldulao" },
+                    { new Guid("321b4996-e320-4f1c-beb7-b55ce8fb7655"), 50, "Jef Bezos" },
+                    { new Guid("9e80c3ed-9829-4aa8-a1e2-5e42c3d4d2e9"), 45, "Elon Musk" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",
                 table: "Books",
