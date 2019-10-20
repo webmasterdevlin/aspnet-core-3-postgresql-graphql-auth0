@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AspNetGraphQL.Entities;
@@ -16,7 +17,7 @@ namespace AspNetGraphQL.GraphQL
                     {Name = "id", Description = "The ID of the Author."}), resolve:
                 context =>
                 {
-                    var id = context.GetArgument<string>("id");
+                    var id = context.GetArgument<Guid>("id");
                     Author author = db
                         .Authors
                         .Include(a => a.Books)
