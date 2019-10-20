@@ -5,7 +5,8 @@
     - Microsoft.AspNetCore.Authentication.JwtBearer
     - Microsoft.EntityFrameworkCore
     - Microsoft.EntityFrameworkCore.Design
-    - Microsoft.EntityFrameworkCore.SqlServer
+    - GraphQL
+    - graphiql
     - Npgsql.EntityFrameworkCore.PostgreSQL
     
  Download PostgreSQL here [postgresql.org/download](https://www.postgresql.org/download/)
